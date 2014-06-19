@@ -1,4 +1,4 @@
-/*-----------------------------*\
+﻿/*-----------------------------*\
 	CONTENT
 \*-----------------------------*/
 
@@ -10,9 +10,9 @@
 3.  $NAVIGATION
 4.  $HEADER
 5.  $ABOUT_ME
-6.  $EXPERIENCE
+6.  $PORTFOLIO
 7.  $EDUCATION
-8.  $PORTFOLIO
+8.  $EXPERIENCE
 8.  $MY_BLOG
 9.  $FOOTER
 
@@ -446,7 +446,7 @@ body {
 	margin-top: 60px;
 }
 .experience p, .education p, .blogsection p {
-	color: #c0c0c0;
+	color: #8e8d8d;
 }
 .period  {
 	/* Positioning & Display */
