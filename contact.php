@@ -7,10 +7,7 @@
 
 	if($_POST['submit']){
 
-		if(mail("czwjerry@gmail.com", $name, $email, $from)){
-			echo "Your message has been sent!";
-		}else{
-			echo "Finish the form and Try again!";
-		}
+		mail("czwjerry@gmail.com", $name, $message))
 	}
 ?>
+
