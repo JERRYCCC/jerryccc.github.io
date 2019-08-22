@@ -310,54 +310,8 @@
 
 
 <!--===================Payment Test======================-->
-<header>
-	<h2>Payment With Stripe</h2>
-</header>
 
-	<div>
-		<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
 
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-gold-enterprise-424"
-  role="link"
->
-  Checkout
-</button>
-
-<div id="error-message"></div>
-
-<script>
-  var stripe = Stripe('pk_test_GTmpn7YQq8152f95xiYVFTD700Cfpm241W');
-
-  var checkoutButton = document.getElementById('checkout-button-gold-enterprise-424');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{plan: 'gold-enterprise-424', quantity: 1}],
-
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://your-website.com/success',
-      cancelUrl: 'https://your-website.com/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-</script>
-	</div>
 
 
 
@@ -367,28 +321,61 @@
 <!-- ================contact me ================ -->		
 		</div> <!-- /page -->
 		<footer class="row-fluid siteFooter">
+
+
 			<div id="contact">
 
 				<aside class="span3 aside_el">
-					<h2>Contact me</h2>
-					<h5>I will reply soon</h5>
+					<h2>Payment Method</h2>
 				</aside>
 
+					<div>
+								<!-- Load Stripe.js on your website. -->
+						<script src="https://js.stripe.com/v3"></script>
 
-				<div class="span9 borderleft">
-					
-					<form class="comment_form" data-validate="parsley"  method="POST" action="contact.php" >
+						<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+						<button
+						  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+						  id="checkout-button-gold-enterprise-424"
+						  role="link"
+						>
+						  Checkout
+						</button>
 
-							<input type="text" name="name" id="form_name" data-required="true" data-trigger="focusin focusout" placeholder="Name + Hello World"/>
-							
-							<input type="text" name="email" id="form_email" data-required="true" data-trigger="focusin focusout" data-type="email" placeholder="Email"/>
-							
-							<textarea rows="8" name="message" id="form_message" data-required="true" data-trigger="focusin focusout" placeholder="Message"></textarea>	
-							
-							<input type="submit" name="submit" id="submit-message" value="SEND THE MESSAGE" />
-					</form>
-				</div>
+						<div id="error-message"></div>
 
+						<script>
+						  var stripe = Stripe('pk_test_GTmpn7YQq8152f95xiYVFTD700Cfpm241W');
+
+						  var checkoutButton = document.getElementById('checkout-button-gold-enterprise-424');
+						  checkoutButton.addEventListener('click', function () {
+						    // When the customer clicks on the button, redirect
+						    // them to Checkout.
+						    stripe.redirectToCheckout({
+						      items: [{plan: 'gold-enterprise-424', quantity: 1}],
+
+						      // Do not rely on the redirect to the successUrl for fulfilling
+						      // purchases, customers may not always reach the success_url after
+						      // a successful payment.
+						      // Instead use one of the strategies described in
+						      // https://stripe.com/docs/payments/checkout/fulfillment
+						      successUrl: 'https://your-website.com/success',
+						      cancelUrl: 'https://your-website.com/canceled',
+						    })
+						    .then(function (result) {
+						      if (result.error) {
+						        // If `redirectToCheckout` fails due to a browser or network
+						        // error, display the localized error message to your customer.
+						        var displayError = document.getElementById('error-message');
+						        displayError.textContent = result.error.message;
+						      }
+						    });
+						  });
+						</script>
+					</div>
+
+
+				
 				<div>
 					<p>. <br>.  <br>. </p>
 					
